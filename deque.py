@@ -11,18 +11,21 @@ class Queue:
         self._storage = []
     
     def append_right(self, x) -> bool: # o(1)
-        try:
+        if len(self._storage) == self.size:
+            print('Дек уже полный')
+            return False
+        else:
             self._storage.append(x)
             return True
-        except:
-            return False
         
     def append_left(self, x) -> bool: # o(1)    тут будет только o(n)...
-        try:
+        if len(self._storage) == self.size:
+            print('Дек уже полный')
+            return False
+        else:
             self._storage.insert(0, x)
             return True
-        except:
-            return False
+        
     
     def delete_right(self) -> bool: # o(1)
         try:
